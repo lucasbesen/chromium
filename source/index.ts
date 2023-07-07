@@ -270,22 +270,6 @@ class Chromium {
    */
   static async executablePath(input?: string): Promise<string> {
     /**
-     * If the `chromium` binary already exists in /tmp/chromium, return it.
-     */
-    if (existsSync("/tmp/chromium") === true) {
-      return Promise.resolve("/tmp/chromium");
-    }
-
-    /**
-     * If input is a valid URL, download and extract the file. It will extract to /tmp/chromium-pack
-     * and executablePath will be recursively called on that location, which will then extract
-     * the brotli files to the correct locations
-     */
-    if (input && isValidUrl(input)) {
-      return this.executablePath(await downloadAndExtract(input));
-    }
-
-    /**
      * If input is defined, use that as the location of the brotli files,
      * otherwise, the default location is ../bin.
      * A custom location is needed for workflows that using custom packaging.
