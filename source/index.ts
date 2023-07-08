@@ -9,7 +9,7 @@ import { https } from "follow-redirects";
 import LambdaFS from "./lambdafs";
 import { join } from "node:path";
 import { URL } from "node:url";
-import { downloadAndExtract, isRunningInAwsLambda, isValidUrl } from "./helper";
+import { isRunningInAwsLambda } from "./helper";
 
 /** Viewport taken from https://github.com/puppeteer/puppeteer/blob/main/docs/api/puppeteer.viewport.md */
 interface Viewport {

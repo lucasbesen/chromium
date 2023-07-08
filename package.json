@@ -33,7 +33,8 @@
   ],
   "scripts": {
     "build": "rm -rf build && tsc -p tsconfig.json",
-    "test": "make clean && make && make pretest && make test"
+    "test": "make clean && make && make pretest && make test",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "follow-redirects": "^1.15.2",
